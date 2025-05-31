@@ -3,7 +3,7 @@ LOCAL_PATH := $(abspath $(call my-dir))
 SRC_PATH := $(LOCAL_PATH)/../..
 GLSLANG_PATH := $(SRC_PATH)/External/glslang
 
-PRE_BUILD_FOLDER := ./libraries
+PRE_BUILD_FOLDER := ../libraries
 
 # Pull in prebuilt libraries
 include $(CLEAR_VARS)
