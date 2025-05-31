@@ -24,6 +24,11 @@ jobs:
           wget https://dl.google.com/android/repository/android-ndk-r28b-linux.zip
           unzip android-ndk-r28b-linux.zip >> /dev/null
 
+    - name: Unzip libraries
+      run: |
+          cd libraries
+          unzip libraries.zip
+
     - name: Build GLOVE lib
       run: |
           $ANDROID_NDK_LATEST_HOME/ndk-build \
