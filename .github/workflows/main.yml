@@ -28,6 +28,7 @@ jobs:
       run: |
           cd libraries
           unzip libs.zip
+          ls
 
     - name: Build GLOVE lib
       run: |
