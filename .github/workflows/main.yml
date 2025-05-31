@@ -26,23 +26,26 @@ jobs:
 
     - name: Build glslang
       run: |
-          NDK_PROJECT_PATH=./android \
+          $ANDROID_NDK_LATEST_HOME/ndk-build \
           APP_BUILD_SCRIPT=./android/jni/Android_glslang.mk \
           NDK_APPLICATION_MK=./android/jni/Application.mk \
+          NDK_PROJECT_PATH=./android \
           TARGET_OUT=./android/obj/build
 
     - name: Build GLOVE lib
       run: |
-          NDK_PROJECT_PATH=./android \
+          $ANDROID_NDK_LATEST_HOME/ndk-build \
           APP_BUILD_SCRIPT=./android/jni/Android_glove.mk \
           NDK_APPLICATION_MK=./android/jni/Application.mk \
+          NDK_PROJECT_PATH=./android \
           TARGET_OUT=./android/obj/build/glove
 
     - name: Build APP
       run: |
-          NDK_PROJECT_PATH=./android \
+          $ANDROID_NDK_LATEST_HOME/ndk-build \
           APP_BUILD_SCRIPT=./android/jni/Android_app.mk \
           NDK_APPLICATION_MK=./android/jni/Application.mk \
+          NDK_PROJECT_PATH=./android \
           TARGET_OUT=./android/obj/build
 
     - name: Upload build output
