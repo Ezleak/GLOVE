@@ -20,7 +20,10 @@ jobs:
     - uses: actions/checkout@main
 
     - name: Configure CMake and Build
-      run: bash android_build.sh
+      run: |
+          wget https://dl.google.com/android/repository/android-ndk-r28b-linux.zip
+          unzip android-ndk-r28b-linux.zip >> /dev/null
+          bash android_build.sh
 
     - name: Upload build output
       uses: actions/upload-artifact@main
