@@ -24,14 +24,6 @@ jobs:
           wget https://dl.google.com/android/repository/android-ndk-r28b-linux.zip
           unzip android-ndk-r28b-linux.zip >> /dev/null
 
-    - name: Build glslang
-      run: |
-          $ANDROID_NDK_LATEST_HOME/ndk-build \
-          APP_BUILD_SCRIPT=./android/jni/Android_glslang.mk \
-          NDK_APPLICATION_MK=./android/jni/Application.mk \
-          NDK_PROJECT_PATH=./android \
-          TARGET_OUT=./android/obj/build
-
     - name: Build GLOVE lib
       run: |
           $ANDROID_NDK_LATEST_HOME/ndk-build \
