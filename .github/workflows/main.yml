@@ -26,9 +26,8 @@ jobs:
 
     - name: Unzip libraries
       run: |
-          cd libraries
+          cd android/libraries
           unzip libs.zip
-          ls
 
     - name: Build GLOVE lib
       run: |
