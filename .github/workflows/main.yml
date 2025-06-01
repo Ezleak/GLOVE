@@ -21,8 +21,8 @@ jobs:
 
     - name: Get NDK
       run: |
-          wget https://dl.google.com/android/repository/android-ndk-r25c-linux.zip
-          unzip android-ndk-r25c-linux.zip >> /dev/null
+          wget https://dl.google.com/android/repository/android-ndk-r21b-linux.zip
+          unzip android-ndk-r21b-linux.zip >> /dev/null
 
     - name: Unzip libraries
       run: |
