@@ -1,0 +1,35 @@
+name: Build
+
+on:
+  push:
+  workflow_dispatch:
+
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    # The CMake configure and build commands are platform agnostic and should work equally
+    # well on Windows or Mac.  You can convert this to a matrix build if you need
+    # cross-platform coverage.
+    # See: https://docs.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow#configuring-a-build-matrix
+    runs-on: ubuntu-24.04
+
+    steps:
+    - uses: actions/checkout@main
+
+    - name: Get NDK
+      run: |
+          wget https://dl.google.com/android/repository/android-ndk-r25-linux.zip
+          unzip android-ndk-r25-linux.zip >> /dev/null
+          wget http://dl.google.com/android/repository/tools_r25-linux.zip
+          unzip tools_r25-linux.zip
+          sudo apt-get install android-platform-build-headers xcb-proto android-platform-frameworks-native-headers android-platform-system-core-headers android-libcutils-dev ant
+          bash android_build.sh
+
+    - name: Upload build output
+      uses: actions/upload-artifact@main
+      with:
+        name: GLOVE
+        path: android/obj/build
