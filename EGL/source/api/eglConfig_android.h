@@ -1,5 +1,3 @@
-#include <system/graphics.h>
-
 #if EGL_SUPPORT_ONLY_PBUFFER_SURFACE == 0
 #   define EGL_AVAILABLE_SURFACES (EGL_PBUFFER_BIT | EGL_WINDOW_BIT)
 #else
@@ -22,8 +20,8 @@ const EGLConfig_t EglConfigs[4] = {
                            1920 * 1080,   // MaxPbufferPixels
                                   1920,   // MaxPbufferWidth
                              EGL_FALSE,   // NativeRenderable
-            HAL_PIXEL_FORMAT_RGBA_8888,   // NativeVisualID
-            HAL_PIXEL_FORMAT_RGBA_8888,   // NativeVisualType
+                                  0x21,   // NativeVisualID
+                              EGL_NONE,   // NativeVisualType
                                      0,   // Samples
                                      0,   // SampleBuffers
                 EGL_AVAILABLE_SURFACES,   // SurfaceType
@@ -34,16 +32,16 @@ const EGLConfig_t EglConfigs[4] = {
                              EGL_FALSE,   // BindToTextureRGB
                               EGL_TRUE,   // BindToTextureRGBA
                                      0,   // MinSwapInterval
-                                     1,   // MaxSwapInterval
+                                     0,   // MaxSwapInterval
                                      0,   // LuminanceSize
                                      0,   // AlphaMaskSize
                         EGL_RGB_BUFFER,   // ColorBufferType
-                    EGL_OPENGL_ES2_BIT,   // RenderableType
+                    EGL_OPENGL_ES3_BIT,   // RenderableType
                               EGL_NONE,   // MatchNativePixmap
                                    0x4,   // Conformant
                              EGL_FALSE,   // RecordableAndroid
                              EGL_FALSE},  // FramebufferTargetAndroid
-                                   
+
                                    { 0,   // Display
                                     24,   // BufferSize
                                      0,   // AlphaSize
@@ -59,8 +57,8 @@ const EGLConfig_t EglConfigs[4] = {
                            1920 * 1080,   // MaxPbufferPixels
                                   1920,   // MaxPbufferWidth
                              EGL_FALSE,   // NativeRenderable
-            HAL_PIXEL_FORMAT_RGBX_8888,   // NativeVisualID
-            HAL_PIXEL_FORMAT_RGBX_8888,   // NativeVisualType
+                                  0x21,   // NativeVisualID
+                              EGL_NONE,   // NativeVisualType
                                      0,   // Samples
                                      0,   // SampleBuffers
                 EGL_AVAILABLE_SURFACES,   // SurfaceType
@@ -71,24 +69,24 @@ const EGLConfig_t EglConfigs[4] = {
                              EGL_FALSE,   // BindToTextureRGB
                               EGL_TRUE,   // BindToTextureRGBA
                                      0,   // MinSwapInterval
-                                     1,   // MaxSwapInterval
+                                     0,   // MaxSwapInterval
                                      0,   // LuminanceSize
                                      0,   // AlphaMaskSize
                         EGL_RGB_BUFFER,   // ColorBufferType
-                    EGL_OPENGL_ES2_BIT,   // RenderableType
+                    EGL_OPENGL_ES3_BIT,   // RenderableType
                               EGL_NONE,   // MatchNativePixmap
                                    0x4,   // Conformant
-                              EGL_TRUE,   // RecordableAndroid
-                              EGL_TRUE},  // FramebufferTargetAndroid
-                                   
+                             EGL_FALSE,   // RecordableAndroid
+                             EGL_FALSE},  // FramebufferTargetAndroid
+
                                    { 0,   // Display
-                                    24,   // BufferSize
+                                    16,   // BufferSize
                                      0,   // AlphaSize
-                                     8,   // BlueSize
+                                     0,   // BlueSize
                                      8,   // GreenSize
                                      8,   // RedSize
-                                     0,   // DepthSize
-                                     0,   // StencilSize
+                                    24,   // DepthSize
+                                     8,   // StencilSize
                               EGL_NONE,   // ConfigCaveat
                                      3,   // ConfigID
                                      0,   // Level
@@ -96,8 +94,8 @@ const EGLConfig_t EglConfigs[4] = {
                            1920 * 1080,   // MaxPbufferPixels
                                   1920,   // MaxPbufferWidth
                              EGL_FALSE,   // NativeRenderable
-            HAL_PIXEL_FORMAT_RGBX_8888,   // NativeVisualID
-            HAL_PIXEL_FORMAT_RGBX_8888,   // NativeVisualType
+                                  0x21,   // NativeVisualID
+                              EGL_NONE,   // NativeVisualType
                                      0,   // Samples
                                      0,   // SampleBuffers
                 EGL_AVAILABLE_SURFACES,   // SurfaceType
@@ -108,23 +106,23 @@ const EGLConfig_t EglConfigs[4] = {
                              EGL_FALSE,   // BindToTextureRGB
                               EGL_TRUE,   // BindToTextureRGBA
                                      0,   // MinSwapInterval
-                                     1,   // MaxSwapInterval
+                                     0,   // MaxSwapInterval
                                      0,   // LuminanceSize
                                      0,   // AlphaMaskSize
                         EGL_RGB_BUFFER,   // ColorBufferType
-                    EGL_OPENGL_ES2_BIT,   // RenderableType
+                    EGL_OPENGL_ES3_BIT,   // RenderableType
                               EGL_NONE,   // MatchNativePixmap
                                    0x4,   // Conformant
                              EGL_FALSE,   // RecordableAndroid
                              EGL_FALSE},  // FramebufferTargetAndroid
 
                                    { 0,   // Display
-                                    32,   // BufferSize
-                                     8,   // AlphaSize
-                                     8,   // BlueSize
-                                     8,   // GreenSize
+                                     8,   // BufferSize
+                                     0,   // AlphaSize
+                                     0,   // BlueSize
+                                     0,   // GreenSize
                                      8,   // RedSize
-                                     0,   // DepthSize
+                                    24,   // DepthSize
                                      8,   // StencilSize
                               EGL_NONE,   // ConfigCaveat
                                      4,   // ConfigID
@@ -133,8 +131,8 @@ const EGLConfig_t EglConfigs[4] = {
                            1920 * 1080,   // MaxPbufferPixels
                                   1920,   // MaxPbufferWidth
                              EGL_FALSE,   // NativeRenderable
-            HAL_PIXEL_FORMAT_RGBA_8888,   // NativeVisualID
-            HAL_PIXEL_FORMAT_RGBA_8888,   // NativeVisualType
+                                  0x21,   // NativeVisualID
+                              EGL_NONE,   // NativeVisualType
                                      0,   // Samples
                                      0,   // SampleBuffers
                 EGL_AVAILABLE_SURFACES,   // SurfaceType
@@ -145,13 +143,13 @@ const EGLConfig_t EglConfigs[4] = {
                              EGL_FALSE,   // BindToTextureRGB
                               EGL_TRUE,   // BindToTextureRGBA
                                      0,   // MinSwapInterval
-                                     1,   // MaxSwapInterval
+                                     0,   // MaxSwapInterval
                                      0,   // LuminanceSize
                                      0,   // AlphaMaskSize
                         EGL_RGB_BUFFER,   // ColorBufferType
-                    EGL_OPENGL_ES2_BIT,   // RenderableType
+                    EGL_OPENGL_ES3_BIT,   // RenderableType
                               EGL_NONE,   // MatchNativePixmap
                                    0x4,   // Conformant
                              EGL_FALSE,   // RecordableAndroid
-                             EGL_FALSE}   // FramebufferTargetAndroid
-};
+                             EGL_FALSE},  // FramebufferTargetAndroid
+};       
