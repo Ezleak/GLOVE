@@ -25,8 +25,9 @@ jobs:
           unzip android-ndk-r25-linux.zip >> /dev/null
           wget http://dl.google.com/android/repository/tools_r25-linux.zip
           unzip tools_r25-linux.zip
-          sudo apt-get install android-platform-build-headers xcb-proto android-platform-frameworks-native-headers android-platform-system-core-headers android-libcutils-dev ant
           bash android_build.sh
+#         sudo apt-get install android-platform-build-headers xcb-proto android-platform-frameworks-native-headers android-platform-system-core-headers android-libcutils-dev ant
+          
 
     - name: Upload build output
       uses: actions/upload-artifact@main
