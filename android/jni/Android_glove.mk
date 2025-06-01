@@ -131,11 +131,11 @@ LOCAL_CXXFLAGS += -pthread \
                   -Wno-mismatched-tags \
                   -frtti \
                   -DGL_GLEXT_PROTOTYPES \
-                  -DHAVE_PTHREADS \
-                  -Wno-unused-function \
-                  -Wno-deprecated-declarations
+                  -DHAVE_PTHREADS
 
-LOCAL_CFLAGS +=   -DVK_USE_PLATFORM_ANDROID_KHR
+LOCAL_CFLAGS = -fexceptions -frtti -std=c++11 -Wall -D_GLIBCXX_USE_CXX11_ABI=1
+LOCAL_CFLAGS += -Ofast
+LOCAL_CFLAGS += -DVK_USE_PLATFORM_ANDROID_KHR
 
 include $(BUILD_SHARED_LIBRARY)
 
@@ -179,11 +179,10 @@ LOCAL_CXXFLAGS += -pthread \
                   -Wno-mismatched-tags \
                   -frtti \
                   -Wno-unused-private-field \
-                  -DHAVE_PTHREADS \
-                  -Wno-unused-function \
-                  -Wno-deprecated-declarations \
-                  -isystem
+                  -DHAVE_PTHREADS
 
-LOCAL_CFLAGS +=   -DVK_USE_PLATFORM_ANDROID_KHR
+LOCAL_CFLAGS += -fexceptions -frtti -std=c++11 -Wall -D_GLIBCXX_USE_CXX11_ABI=1
+LOCAL_CFLAGS += -Ofast
+LOCAL_CFLAGS += -DVK_USE_PLATFORM_ANDROID_KHR
 
 include $(BUILD_SHARED_LIBRARY)
