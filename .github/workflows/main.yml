@@ -31,6 +31,7 @@ jobs:
 
     - name: Build GLOVE lib
       run: |
+          -isystem
           $ANDROID_NDK_LATEST_HOME/ndk-build \
           APP_BUILD_SCRIPT=./android/jni/Android_glove.mk \
           NDK_APPLICATION_MK=./android/jni/Application.mk \
