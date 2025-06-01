@@ -1,4 +1,4 @@
-
+#include <graphics.h>
 
 #if EGL_SUPPORT_ONLY_PBUFFER_SURFACE == 0
 #   define EGL_AVAILABLE_SURFACES (EGL_PBUFFER_BIT | EGL_WINDOW_BIT)
