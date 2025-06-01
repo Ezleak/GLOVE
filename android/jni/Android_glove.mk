@@ -131,7 +131,9 @@ LOCAL_CXXFLAGS += -pthread \
                   -Wno-mismatched-tags \
                   -frtti \
                   -DGL_GLEXT_PROTOTYPES \
-                  -DHAVE_PTHREADS
+                  -DHAVE_PTHREADS \
+                  -Wno-unused-function \
+                  -Wno-deprecated-declarations
 
 LOCAL_CFLAGS +=   -DVK_USE_PLATFORM_ANDROID_KHR
 
@@ -177,7 +179,10 @@ LOCAL_CXXFLAGS += -pthread \
                   -Wno-mismatched-tags \
                   -frtti \
                   -Wno-unused-private-field \
-                  -DHAVE_PTHREADS
+                  -DHAVE_PTHREADS \
+                  -Wno-unused-function \
+                  -Wno-deprecated-declarations \
+                  -isystem
 
 LOCAL_CFLAGS +=   -DVK_USE_PLATFORM_ANDROID_KHR
 
